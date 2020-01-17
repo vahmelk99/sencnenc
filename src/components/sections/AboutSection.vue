@@ -37,9 +37,6 @@ export default {
 }
 .about_me {
   width: 30%;
-  height: 400px;
-
-  /* background-color: lightblue; */
 }
 .about_me > h1 {
   text-align: center;
@@ -53,12 +50,8 @@ export default {
 }
 .photo_cont {
   width: 30%;
-  /* background-color: lightblue; */
   height: 400px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  margin-top: 55px;
 }
 .photo {
   width: 300px;
@@ -71,7 +64,6 @@ export default {
 }
 .details_cont {
   width: 25%;
-  /* background-color: lightblue; */
   height: 400px;
 }
 
@@ -94,21 +86,23 @@ export default {
 }
 @media screen and (max-width: 1024px) {
   .about_sec_all {
+    padding-top: 50px;
     display: block;
   }
   .about_me {
     width: 100%;
-    height: 200px;
   }
   .photo_cont {
     display: inline-flex;
-    width: 49%;
+    width: 50%;
     border-radius: 30px;
     border-bottom-left-radius: 150px;
     border-bottom-right-radius: 0px;
     background-color: rgba(122, 118, 118, 0.1);
   }
   .details_cont {
+    height: auto;
+    padding-bottom: 90px;
     width: 49%;
     border-radius: 30px;
     border-top-right-radius: 150px;
@@ -117,7 +111,10 @@ export default {
     display: inline-block;
   }
   .details_cont > h1 {
-    margin-top: 60px;
+    margin-top: 90px;
+  }
+  .photo {
+    margin-top: 35px;
   }
 }
 @media screen and (max-width: 800px) {
@@ -129,21 +126,15 @@ export default {
     padding-right: 0;
     padding-left: 0;
   }
-  .about_me {
-    height: 350px;
-  }
   .about_sec_all > div {
     width: 100%;
   }
-  .photo {
-    margin-top: 25px;
-  }
-  .details_cont {
-    background-color: white;
-  }
+  .details_cont,
   .photo_cont {
     background-color: white;
-    height: 300px;
+  }
+  .details_cont > h1 {
+    margin-top: 0;
   }
 }
 </style>
