@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Header :part="0" />
+    <Header :part="0" ref="topper" />
 
-    <div class="parts">
+    <div :class="[partColor, 'parts']">
       <p class="partsLI" v-for="(part, i) in partsLI" :key="i">{{part}}</p>
     </div>
     <div class="parts mini">
@@ -40,8 +40,21 @@ export default {
   data() {
     return {
       partsLI: ["Profile", "Experiences", "Abilites", "Projects", "Contacr"],
-      showMenu: false
+      showMenu: false,
+      partColor: "white"
     };
+  },
+  methods: {
+    handleScroll() {
+      this.partColor = window.scrollY < 445 ? "white" : "black";
+    }
+  },
+  created() {
+    this.handleScroll();
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
   }
 };
 </script>
@@ -54,11 +67,16 @@ export default {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   user-select: none;
 }
+.white {
+  color: white;
+}
+.black {
+  color: black;
+}
 .partsLI:hover {
   color: #00aeff;
 }
 .parts {
-  color: white;
   position: sticky;
   top: 0;
   padding: 35px 0;
@@ -67,8 +85,8 @@ export default {
   justify-content: center;
 }
 .mini {
+  color: white;
   display: none;
-  /* position: relative; */
 }
 .partsLI {
   cursor: pointer;

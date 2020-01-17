@@ -35,8 +35,7 @@ export default {
   },
   data() {
     return {
-      socials: ["facebook", "linkedin", "twitter", "instagram"],
-      showMenu: false
+      socials: ["facebook", "linkedin", "twitter", "instagram"]
     };
   }
 };
@@ -114,27 +113,6 @@ export default {
 }
 .con {
   width: 100%;
-}
-.ham {
-  background-color: #3f5c86af;
-  cursor: pointer;
-  padding: 10px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-.hamOpen {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-.partInner {
-  position: absolute;
-  top: 87px;
-  width: 100%;
-}
-.partInner > p {
-  margin: 0;
-  padding: 20px 20px;
-  background-color: #3f5c86af;
 }
 
 @keyframes downanim {
