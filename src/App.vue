@@ -39,7 +39,7 @@ export default {
   },
   data() {
     return {
-      partsLI: ["Profile", "Experiences", "Abilites", "Projects", "Contacr"],
+      partsLI: ["Profile", "Experiences", "Abilites", "Projects", "Contact"],
       showMenu: false,
       partColor: "white"
     };
@@ -72,6 +72,7 @@ export default {
 }
 .black {
   color: black;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .partsLI:hover {
   color: #00aeff;

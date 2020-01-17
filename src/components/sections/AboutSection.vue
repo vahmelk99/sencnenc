@@ -34,11 +34,11 @@ export default {
   padding-right: 10%;
   padding-left: 10%;
   background-color: white;
-  height: 400px;
 }
 .about_me {
   width: 30%;
-  height: 100%;
+  height: 400px;
+
   /* background-color: lightblue; */
 }
 .about_me > h1 {
@@ -54,7 +54,8 @@ export default {
 .photo_cont {
   width: 30%;
   /* background-color: lightblue; */
-  height: 100%;
+  height: 400px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -71,7 +72,7 @@ export default {
 .details_cont {
   width: 25%;
   /* background-color: lightblue; */
-  height: 100%;
+  height: 400px;
 }
 
 .details_cont > h1 {
@@ -90,5 +91,33 @@ export default {
 .details_cont > .location {
   margin-top: 10px;
   text-align: center;
+}
+@media screen and (max-width: 1024px) {
+  .about_sec_all {
+    display: block;
+  }
+  .about_me {
+    width: 100%;
+    height: 200px;
+  }
+  .photo_cont {
+    display: inline-flex;
+    width: 49%;
+    border-radius: 30px;
+    border-bottom-left-radius: 150px;
+    border-bottom-right-radius: 0px;
+    background-color: rgba(122, 118, 118, 0.1);
+  }
+  .details_cont {
+    width: 49%;
+    border-radius: 30px;
+    border-top-right-radius: 150px;
+    border-top-left-radius: 0px;
+    background-color: rgba(122, 118, 118, 0.1);
+    display: inline-block;
+  }
+  .details_cont > h1 {
+    margin-top: 60px;
+  }
 }
 </style>
