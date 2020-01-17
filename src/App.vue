@@ -104,7 +104,7 @@ export default {
   }
   .hamburger {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     margin-right: 30px;
   }
 }

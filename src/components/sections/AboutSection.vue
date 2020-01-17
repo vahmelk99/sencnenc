@@ -120,4 +120,30 @@ export default {
     margin-top: 60px;
   }
 }
+@media screen and (max-width: 800px) {
+  .about_sec_all {
+    padding-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .about_me {
+    height: 350px;
+  }
+  .about_sec_all > div {
+    width: 100%;
+  }
+  .photo {
+    margin-top: 25px;
+  }
+  .details_cont {
+    background-color: white;
+  }
+  .photo_cont {
+    background-color: white;
+    height: 300px;
+  }
+}
 </style>
