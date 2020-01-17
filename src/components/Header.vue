@@ -1,10 +1,151 @@
-<template></template>
+<template>
+  <div>
+    <div class="con" v-if="!part">
+      <div class="bg"></div>
+      <div class="filtrBlack"></div>
+      <div class="inner">
+        <div class="textes">
+          <p>WELCOME</p>
+          <p>
+            I'm an
+            <span>AI SPECIALIST</span>
+          </p>
+          <p>DEVELOPER PROGRAMMER BUISNESSMAN</p>
+          <div class="icons">
+            <span v-for="social in socials" :class="`fa fa-${social}`" :key="social"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="con" v-else>
+      <div class="inner">
+        <div class="downdiv">
+          <font-awesome-icon class="downicon" icon="angle-double-down" size="3x" />
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  props: {
+    part: Number
+  },
+  data() {
+    return {
+      socials: ["facebook", "linkedin", "twitter", "instagram"],
+      showMenu: false
+    };
+  }
 };
 </script>
 
 <style scoped>
+.fa-facebook:hover {
+  color: #3b5998;
+}
+.fa-linkedin:hover {
+  color: #007bb5;
+}
+.fa-twitter:hover {
+  color: #55acee;
+}
+.fa-instagram:hover {
+  color: #ea4c89;
+}
+.downdiv {
+  height: 90px;
+}
+.downicon {
+  cursor: pointer;
+  animation: downanim 2s infinite;
+}
+.downicon:hover {
+  color: #00aeff;
+}
+
+.icons > span {
+  cursor: pointer;
+  font-size: 25px;
+  margin: 0 10px;
+}
+.textes > p:first-child {
+  font-size: 30px;
+}
+.textes > p:nth-child(2) {
+  word-wrap: break-word;
+  font-size: 60px;
+  margin: 30px 0;
+}
+.textes > p:nth-child(3) {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.textes > p > span {
+  font-weight: bold;
+}
+.textes {
+  padding-top: 80px;
+}
+.inner {
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+.filtrBlack {
+  position: absolute;
+  height: 800px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -100;
+}
+.bg {
+  position: absolute;
+  filter: blur(2px);
+  background-image: url("../assets/HeaderBG.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 800px;
+  width: 100%;
+  background-color: black;
+  z-index: -200;
+}
+.con {
+  width: 100%;
+}
+.ham {
+  background-color: #3f5c86af;
+  cursor: pointer;
+  padding: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.hamOpen {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.partInner {
+  position: absolute;
+  top: 87px;
+  width: 100%;
+}
+.partInner > p {
+  margin: 0;
+  padding: 20px 20px;
+  background-color: #3f5c86af;
+}
+
+@keyframes downanim {
+  0% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: 20px;
+  }
+  100% {
+    margin-top: 0;
+  }
+}
 </style>
