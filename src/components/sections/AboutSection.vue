@@ -37,7 +37,7 @@ export default {
 }
 .about_me {
   width: 30%;
-  height: 400px;
+  /* height: 400px; */
 
   /* background-color: lightblue; */
 }
@@ -130,7 +130,7 @@ export default {
     padding-left: 0;
   }
   .about_me {
-    height: 350px;
+    /* height: 350px; */
   }
   .about_sec_all > div {
     width: 100%;
