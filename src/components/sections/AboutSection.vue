@@ -20,9 +20,7 @@
 </template>
 <script>
 export default {
-  data() {
-    return {};
-  }
+  name: "AboutSection"
 };
 </script>
 <style scoped>
@@ -88,6 +86,7 @@ export default {
   .about_sec_all {
     padding-top: 50px;
     display: block;
+    margin-bottom: 50px;
   }
   .about_me {
     width: 100%;
@@ -124,6 +123,7 @@ export default {
     align-items: center;
     width: 100%;
     padding-right: 0;
+    margin-bottom: 0;
     padding-left: 0;
   }
   .about_sec_all > div {
