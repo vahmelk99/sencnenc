@@ -1,5 +1,5 @@
 <template>
-  <div class="about_sec_all">
+  <div class="about_sec_all" id="Profile">
     <div class="about_me">
       <h1>About me</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae in illum, labore autem fugit cum corrupti impedit, id ex minima totam suscipit error voluptates tempore sequi pariatur architecto, quo iste? Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam minima, esse doloremque non fugit labore minus quod consectetur aspernatur sit libero error, veritatis ex. Amet nesciunt repellat sunt id cumque?</p>
@@ -25,7 +25,7 @@ export default {
 </script>
 <style scoped>
 .about_sec_all {
-  padding-top: 100px;
+  padding-top: 85px;
   display: flex;
   justify-content: space-around;
   width: 80%;
@@ -84,7 +84,6 @@ export default {
 }
 @media screen and (max-width: 1024px) {
   .about_sec_all {
-    padding-top: 50px;
     display: block;
     margin-bottom: 50px;
   }
@@ -118,7 +117,6 @@ export default {
 }
 @media screen and (max-width: 800px) {
   .about_sec_all {
-    padding-top: 50px;
     flex-direction: column;
     align-items: center;
     width: 100%;

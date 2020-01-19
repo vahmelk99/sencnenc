@@ -19,9 +19,6 @@ export default {
     Study,
     Experience,
     AboutSection
-  },
-  data() {
-    return {};
   }
 };
 </script>
