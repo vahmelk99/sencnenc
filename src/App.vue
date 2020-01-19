@@ -67,6 +67,9 @@ export default {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   user-select: none;
 }
+.bold {
+  font-weight: bold;
+}
 .white {
   color: white;
 }
