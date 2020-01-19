@@ -3,7 +3,7 @@
     <Header :part="0" ref="topper" />
 
     <div :class="[partColor, 'parts']">
-      <p class="partsLI" v-for="(part, i) in partsLI" :key="i">{{part}}</p>
+      <p class="partsLI" v-for="(part, i) in partsLI" :key="i" @click="scrollTo(part)">{{part}}</p>
     </div>
     <div class="parts mini">
       <div class="hamburger">
@@ -15,7 +15,7 @@
         />
       </div>
       <div class="partInner" v-show="showMenu">
-        <p class="partsLI" v-for="(part, i) in partsLI" :key="i">{{part}}</p>
+        <p class="partsLI" v-for="(part, i) in partsLI" :key="i" @click="scrollTo(part)">{{part}}</p>
       </div>
     </div>
 
@@ -29,6 +29,8 @@
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
 import Middle from "./components/Middle.vue";
+import { scroller } from "vue-scrollto/src/scrollTo";
+const scroll = scroller();
 
 export default {
   name: "app",
@@ -47,6 +49,9 @@ export default {
   methods: {
     handleScroll() {
       this.partColor = window.scrollY < 445 ? "white" : "black";
+    },
+    scrollTo(el) {
+      scroll(`#${el}`);
     }
   },
   created() {
@@ -75,7 +80,7 @@ export default {
 }
 .black {
   color: black;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.616);
 }
 .partsLI:hover {
   color: #00aeff;

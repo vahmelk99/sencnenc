@@ -1,7 +1,7 @@
 <template>
-  <div class="con">
+  <div class="con" id="Experiences">
     <div class="head">
-      <h1>Projec Experience</h1>
+      <h1>Project Experience</h1>
       <img src="../../assets/man.png" />
     </div>
     <div class="inner">
@@ -37,8 +37,8 @@ export default {
   margin-bottom: 30px;
 }
 .con {
-  padding: 50px 10vw;
-  background-color: rgba(223, 223, 223, 0.767);
+  padding: 85px 10vw;
+  background-color: rgba(122, 118, 118, 0.1);
 }
 .inner > img {
   width: 250px;
@@ -79,7 +79,7 @@ export default {
     display: block;
   }
   .con {
-    padding: 50px 30px;
+    padding: 85px 30px;
   }
   .inner > div {
     width: 100%;
