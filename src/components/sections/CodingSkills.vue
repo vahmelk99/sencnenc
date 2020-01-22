@@ -409,4 +409,31 @@ export default {
   background-position: 0 -1px;
   background-image: url("../../assets/little_icons/stringr.png");
 }
+@media screen and (max-width: 1100px) {
+  .skills {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+  }
+  .skills:nth-of-type(2) {
+    margin-top: 0px;
+  }
+  .skills > div {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .skills {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 460px) {
+  .skills {
+    width: 100%;
+  }
+  .coding_skills_container {
+    width: 90%;
+  }
+}
 </style>
