@@ -3,6 +3,7 @@
     <AboutSection />
     <Study />
     <Experience />
+
     <CodingSkills />
   </div>
 </template>
