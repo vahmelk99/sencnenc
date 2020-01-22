@@ -186,6 +186,7 @@ export default {
   width: 70%;
   margin: 0 auto;
   margin-top: 50px;
+  padding-bottom: 50px;
   /* background-color: red; */
 }
 .coding_skills_container > h1:first-child {
