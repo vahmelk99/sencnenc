@@ -37,7 +37,7 @@ export default {
   margin-bottom: 30px;
 }
 .con {
-  padding: 85px 10vw;
+  padding: 87px 10vw;
   background-color: rgba(122, 118, 118, 0.1);
 }
 .inner > img {

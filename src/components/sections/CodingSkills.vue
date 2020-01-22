@@ -1,5 +1,5 @@
 <template>
-  <div class="coding_skills_container">
+  <div class="coding_skills_container" id="Abilites">
     <h1>Coding Skills</h1>
     <div class="skills">
       <div class="python_card">
@@ -176,18 +176,16 @@
 </template>
 <script>
 export default {
-  data() {
-    return {};
-  }
+  name: "CodingSkills"
 };
 </script>
 <style scoped>
 .coding_skills_container {
   width: 70%;
   margin: 0 auto;
-  margin-top: 50px;
+  background-color: white;
+  padding-top: 87px;
   padding-bottom: 50px;
-  /* background-color: red; */
 }
 .coding_skills_container > h1:first-child {
   text-align: center;
@@ -309,6 +307,8 @@ export default {
 .tidymodels_logo,
 .sparklyr_logo,
 .stringr_logo {
+  z-index: -1;
+
   background-repeat: no-repeat;
   display: inline-block;
   width: 15px;
@@ -330,6 +330,7 @@ export default {
   border-radius: 15px;
   position: relative;
   top: 8px;
+  z-index: -1;
   margin-right: 3px;
   background-size: cover;
 }

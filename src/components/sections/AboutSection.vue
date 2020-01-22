@@ -25,7 +25,7 @@ export default {
 </script>
 <style scoped>
 .about_sec_all {
-  padding-top: 85px;
+  padding-top: 87px;
   display: flex;
   justify-content: space-around;
   width: 80%;
@@ -38,7 +38,7 @@ export default {
 }
 .about_me > h1 {
   text-align: center;
-  margin-top: 25px;
+  /* margin-top: 25px; */
 }
 .about_me > p {
   width: 80%;
@@ -123,21 +123,10 @@ export default {
     padding-right: 0;
     margin-bottom: 0;
     padding-left: 0;
-    padding-top: 10px;
-  }
-  .photo {
-    margin-top: 5px;
-  }
-  .about_me {
-    /* height: 350px; */
   }
   .about_sec_all > div {
     width: 100%;
   }
-  .photo_cont {
-    height: 350px;
-  }
-
   .details_cont,
   .photo_cont {
     background-color: white;
