@@ -21,7 +21,7 @@
             class="partsLI"
             v-for="(part, i) in partsLI"
             :key="i"
-            @click="scrollTo(part); showMenu = flase"
+            @click="scrollTo(part); showMenu = false"
           >{{part}}</p>
         </div>
       </div>
@@ -95,6 +95,7 @@ export default {
   color: #00aeff;
 }
 .parts {
+  z-index: 2;
   position: sticky;
   top: 0;
   display: flex;

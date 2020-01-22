@@ -1,5 +1,5 @@
 <template>
-  <div class="coding_skills_container" id="Abilites">
+  <div class="coding_skills_container">
     <h1>Coding Skills</h1>
     <div class="skills">
       <div class="python_card">
@@ -58,7 +58,7 @@
       </div>
       <div class="r_card">
         <div class="r_heading">
-          <div class="r_logo"></div>
+          <div class="r_logo bold">R</div>
         </div>
         <div class="r_stars">
           <font-awesome-icon class="star_filled" icon="star" />
@@ -184,7 +184,6 @@ export default {
   width: 70%;
   margin: 0 auto;
   background-color: white;
-  padding-top: 87px;
   padding-bottom: 50px;
 }
 .coding_skills_container > h1:first-child {
@@ -307,7 +306,7 @@ export default {
 .tidymodels_logo,
 .sparklyr_logo,
 .stringr_logo {
-  z-index: -1;
+  z-index: 0;
 
   background-repeat: no-repeat;
   display: inline-block;
@@ -324,18 +323,18 @@ export default {
 .r_logo,
 .latex_logo,
 .ms_logo {
+  /* z-index: -1; */
   display: inline-block;
   width: 25px;
   height: 25px;
   border-radius: 15px;
   position: relative;
   top: 8px;
-  z-index: -1;
   margin-right: 3px;
   background-size: cover;
 }
 .r_logo {
-  background-image: url("../../assets/little_icons/r.jpg");
+  /* background-image: url("../../assets/little_icons/r.jpg"); */
 }
 .latex_logo {
   background-image: url("../../assets/little_icons/latex.png");
