@@ -123,16 +123,21 @@ export default {
     padding-right: 0;
     margin-bottom: 0;
     padding-left: 0;
+    padding-top: 10px;
   }
-<<<<<<< HEAD
+  .photo {
+    margin-top: 5px;
+  }
   .about_me {
     /* height: 350px; */
   }
-=======
->>>>>>> 8eb7ea1937dbe228aadb86e3d79fd314880e95b2
   .about_sec_all > div {
     width: 100%;
   }
+  .photo_cont {
+    height: 350px;
+  }
+
   .details_cont,
   .photo_cont {
     background-color: white;
