@@ -2,9 +2,9 @@
   <div class="middle_all">
     <AboutSection />
     <Study />
-    <Experience />
     <Special />
     <CodingSkills />
+    <Experience />
   </div>
 </template>
 

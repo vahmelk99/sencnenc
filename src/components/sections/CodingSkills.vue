@@ -306,8 +306,6 @@ export default {
 .tidymodels_logo,
 .sparklyr_logo,
 .stringr_logo {
-  z-index: 0;
-
   background-repeat: no-repeat;
   display: inline-block;
   width: 15px;
@@ -323,7 +321,6 @@ export default {
 .r_logo,
 .latex_logo,
 .ms_logo {
-  /* z-index: -1; */
   display: inline-block;
   width: 25px;
   height: 25px;

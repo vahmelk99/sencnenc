@@ -50,7 +50,7 @@ export default {
   },
   data() {
     return {
-      partsLI: ["Profile", "Experiences", "Abilites", "Projects", "Contact"],
+      partsLI: ["Profile", "Abilites", "Projects", "Experiences", "Contact"],
       showMenu: false,
       partColor: "white"
     };

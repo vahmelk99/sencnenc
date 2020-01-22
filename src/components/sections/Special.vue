@@ -16,7 +16,7 @@
           <img src="../../assets/graphs.png" />
         </div>
         <div>
-          <h2>AI</h2>
+          <h2>Data Since and Analitics</h2>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima provident officiis doloribus sunt natus necessitatibus in consequatur porro ipsam sed a soluta et consectetur, deleniti vitae, enim obcaecati ab omnis?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque nesciunt aspernatur assumenda, voluptatum dolorum aut necessitatibus omnis minus fugit perspiciatis adipisci maxime, eveniet praesentium harum ipsum expedita modi velit illum!</p>
         </div>
       </div>
@@ -25,7 +25,7 @@
           <img src="../../assets/plot.png" />
         </div>
         <div>
-          <h2>AI</h2>
+          <h2>Optimization</h2>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima provident officiis doloribus sunt natus necessitatibus in consequatur porro ipsam sed a soluta et consectetur, deleniti vitae, enim obcaecati ab omnis?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque nesciunt aspernatur assumenda, voluptatum dolorum aut necessitatibus omnis minus fugit perspiciatis adipisci maxime, eveniet praesentium harum ipsum expedita modi velit illum!</p>
         </div>
       </div>
@@ -34,7 +34,7 @@
           <img src="../../assets/diff.png" />
         </div>
         <div>
-          <h2>AI</h2>
+          <h2>Differential Equations</h2>
           <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima provident officiis doloribus sunt natus necessitatibus in consequatur porro ipsam sed a soluta et consectetur, deleniti vitae, enim obcaecati ab omnis?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque nesciunt aspernatur assumenda, voluptatum dolorum aut necessitatibus omnis minus fugit perspiciatis adipisci maxime, eveniet praesentium harum ipsum expedita modi velit illum!</p>
         </div>
       </div>
@@ -66,10 +66,12 @@ export default {
 .inner > div {
   margin: 50px 0;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 .inner > div > div > img {
   width: 100%;
+  transition: 1s ease;
   height: auto;
 }
 .inner > div > div:first-child {
@@ -87,13 +89,20 @@ export default {
     display: flex;
     flex-direction: column-reverse;
   }
+  .inner p {
+    padding: 10px 0;
+  }
   .inner > div > div > img {
     width: 50%;
-    height: auto;
   }
   .inner > div > div:first-child {
     display: flex;
     justify-content: center;
+  }
+}
+@media screen and (max-width: 494px) {
+  .inner > div > div > img {
+    width: 100%;
   }
 }
 </style>
