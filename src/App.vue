@@ -88,7 +88,6 @@ export default {
 .parts {
   position: sticky;
   top: 0;
-  padding: 35px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -96,12 +95,13 @@ export default {
 .mini {
   color: white;
   display: none;
+  padding-top: 35px;
 }
 .partsLI {
   cursor: pointer;
+  padding: 35px 25px;
   font-size: 20px;
   font-weight: 600;
-  margin: 0 25px;
 }
 @media screen and (max-width: 800px) {
   .parts {
