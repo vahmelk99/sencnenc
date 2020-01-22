@@ -56,6 +56,121 @@
           </div>
         </div>
       </div>
+      <div class="r_card">
+        <div class="r_heading">
+          <div class="r_logo"></div>
+        </div>
+        <div class="r_stars">
+          <font-awesome-icon class="star_filled" icon="star" />
+          <font-awesome-icon class="star_filled" icon="star" />
+          <font-awesome-icon class="star_filled" icon="star" />
+          <font-awesome-icon class="star_filled" icon="star" />
+          <font-awesome-icon class="star_filled" icon="star" />
+        </div>
+        <h4 class="anal_h">Analyse & Explore</h4>
+        <div class="anal_h_libs">
+          <div>
+            <div class="tidyverse_logo"></div>
+            <span>Tidyverse</span>
+          </div>
+          <div>
+            <div class="ggplot_logo"></div>
+            <span>Ggplot 2</span>
+          </div>
+          <div>
+            <div class="dplyr_logo"></div>
+            <span>Dplyr</span>
+          </div>
+          <div>
+            <div class="tidyr_logo"></div>
+            <span>Tidyr</span>
+          </div>
+          <div>
+            <div class="purrr_logo"></div>
+            <span>Purrr</span>
+          </div>
+        </div>
+        <h4 class="model_h">Model & Predict</h4>
+        <div class="model_h_libs">
+          <div>
+            <div class="tensorflow_logo"></div>
+            <span>TensorFlow</span>
+          </div>
+          <div>
+            <div class="tidymodels_logo"></div>
+            <span>Tidymodels</span>
+          </div>
+          <div>
+            <div class="sparklyr_logo"></div>
+            <span>Sparklyr</span>
+          </div>
+          <div>
+            <div class="stringr_logo"></div>
+            <span>Stringr</span>
+          </div>
+        </div>
+      </div>
+      <div class="matlab_card">
+        <div class="matlab_heading">
+          <div class="matlab_logo"></div>
+          <div>MatLab</div>
+        </div>
+        <div class="matlab_stars">
+          <font-awesome-icon class="star_filled" icon="star" />
+          <font-awesome-icon class="star_filled" icon="star" />
+          <font-awesome-icon class="star_filled" icon="star" />
+          <font-awesome-icon class="star_filled" icon="star" />
+          <font-awesome-icon class="star_filled" icon="star" />
+        </div>
+        <h4 class="stat_tool_h">Statistics Toolbox</h4>
+        <h4 class="machin_h">Machine Learning Toolbox</h4>
+        <h4 class="optim_h">Optimization Toolbox</h4>
+        <h4 class="curve_h">Curve Fitting Toolbox</h4>
+        <h4 class="diff_h">Differential Equation Toolbox</h4>
+      </div>
+    </div>
+    <div class="skills">
+      <div class="latex_card">
+        <div class="latex_heading">
+          <div class="latex_logo"></div>
+          <div>Latex</div>
+        </div>
+        <div class="latex_stars">
+          <font-awesome-icon class="star_filled" icon="star" />
+          <font-awesome-icon class="star_filled" icon="star" />
+          <font-awesome-icon class="star_filled" icon="star" />
+          <font-awesome-icon class="star_filled" icon="star" />
+          <font-awesome-icon class="star_filled" icon="star" />
+        </div>
+        <h4 class="beamer_h">Beamer</h4>
+        <h4 class="pgf_h">PGF/TikZ</h4>
+        <div class="ms_heading">
+          <div class="ms_logo"></div>
+          <div>MS Office</div>
+        </div>
+        <div class="ms_stars">
+          <font-awesome-icon class="star_filled" icon="star" />
+          <font-awesome-icon class="star_filled" icon="star" />
+          <font-awesome-icon class="star_filled" icon="star" />
+          <font-awesome-icon class="star_filled" icon="star" />
+          <font-awesome-icon class="star_filled" icon="star" />
+        </div>
+        <h4>Word</h4>
+        <h4>Excel</h4>
+        <h4>Powerpoint</h4>
+      </div>
+      <div class="other_card">
+        <div class="other_heading">Other skills</div>
+        <h4>Java</h4>
+        <h4>C++</h4>
+        <h4>HTML & CSS</h4>
+        <h4>AWS</h4>
+        <h4>Azure</h4>
+        <h4>Spark</h4>
+        <h4>Bash</h4>
+        <h4>Linux</h4>
+        <h4>MacOS</h4>
+      </div>
     </div>
   </div>
 </template>
@@ -75,18 +190,37 @@ export default {
 }
 .coding_skills_container > h1:first-child {
   text-align: center;
+  margin-bottom: 10px;
 }
 .skills {
   width: 100%;
-  background-color: rgba(122, 118, 118, 0.1);
+  /* background-color: red; */
   display: flex;
   justify-content: space-between;
 }
-.python_card {
+.skills:nth-of-type(2) {
+  margin-top: 20px;
+  justify-content: space-around;
+}
+.skills > div {
+  padding: 10px 0px;
+}
+.python_card,
+.matlab_card,
+.r_card,
+.latex_card,
+.other_card {
   width: 30%;
+  background-color: rgba(122, 118, 118, 0.1);
+
   /* background-color: blue; */
 }
-.python_heading {
+.python_heading,
+.matlab_heading,
+.latex_heading,
+.r_heading,
+.ms_heading,
+.other_heading {
   display: flex;
   justify-content: center;
   height: 40px;
@@ -94,34 +228,67 @@ export default {
   font-weight: bold;
   line-height: 40px;
 }
-.python_card > h4 {
+.python_card > h4,
+.matlab_card > h4,
+.r_card > h4,
+.latex_card > h4,
+.other_card > h4 {
   /* text-align: center; */
   padding-left: 10%;
 }
-.python_stars {
+.matlab_card > h4 {
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+.python_stars,
+.matlab_stars,
+.latex_stars,
+.r_stars,
+.ms_stars {
   display: flex;
   width: 50%;
   justify-content: space-around;
   margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .star_filled {
   color: #f89621;
 }
 .ml_h,
 .stat_h,
-.math_h {
-  margin-top: 10px;
+.math_h,
+.anal_h,
+.model_h {
+  /* margin-top: 10px; */
   font-size: 17px;
 }
 .ml_h::before,
 .stat_h::before,
-.math_h::before {
+.machin_h::before,
+.math_h::before,
+.stat_tool_h::before,
+.optim_h::before,
+.curve_h::before,
+.diff_h::before,
+.part_diff_h::before,
+.beamer_h::before,
+.pgf_h::before,
+.anal_h::before,
+.model_h::before,
+.ms_heading ~ h4::before,
+.other_heading ~ h4::before {
   content: "\22B6     ";
+  color: #f89621;
+}
+.other_heading ~ h4 {
+  margin-bottom: 5px;
 }
 .ml_h_libs,
 .stat_h_libs,
-.math_h_libs {
-  /* background-color: red; */
+.math_h_libs,
+.anal_h_libs,
+.model_h_libs {
   padding-left: 30%;
 }
 .tens_log,
@@ -131,7 +298,17 @@ export default {
 .numpy_log,
 .scipy_log,
 .dolphin_log,
-.scikit_learn_log {
+.scikit_learn_log,
+.tidyverse_logo,
+.ggplot_logo,
+.dplyr_logo,
+.tidyr_logo,
+.purrr_logo,
+.tensorflow_logo,
+.tidymodels_logo,
+.sparklyr_logo,
+.stringr_logo {
+  background-repeat: no-repeat;
   display: inline-block;
   width: 15px;
   height: 15px;
@@ -141,7 +318,11 @@ export default {
   margin-right: 5px;
   background-size: cover;
 }
-.python_logo {
+.python_logo,
+.matlab_logo,
+.r_logo,
+.latex_logo,
+.ms_logo {
   display: inline-block;
   width: 25px;
   height: 25px;
@@ -149,8 +330,22 @@ export default {
   position: relative;
   top: 8px;
   margin-right: 3px;
-  background-image: url("../../assets/little_icons/python.png");
   background-size: cover;
+}
+.r_logo {
+  background-image: url("../../assets/little_icons/r.jpg");
+}
+.latex_logo {
+  background-image: url("../../assets/little_icons/latex.png");
+}
+.ms_logo {
+  background-image: url("../../assets/little_icons/ms_office.png");
+}
+.python_logo {
+  background-image: url("../../assets/little_icons/python.png");
+}
+.matlab_logo {
+  background-image: url("../../assets/little_icons/matlab.png");
 }
 .tens_log {
   background-image: url("../../assets/little_icons/tensorflow.png");
@@ -176,5 +371,42 @@ export default {
 }
 .scikit_learn_log {
   background-image: url("../../assets/little_icons/scikit-learn.png");
+}
+.tidyverse_logo {
+  background-position: 0 -1px;
+  background-image: url("../../assets/little_icons/tidyverse.png");
+}
+.ggplot_logo {
+  background-position: 0 -1px;
+  background-image: url("../../assets/little_icons/ggplot2.png");
+}
+.dplyr_logo {
+  background-position: 0 -1px;
+  background-image: url("../../assets/little_icons/dplyr.png");
+}
+.tidyr_logo {
+  background-position: 0 -1px;
+
+  background-image: url("../../assets/little_icons/tidyr.png");
+}
+.purrr_logo {
+  background-position: 0 -1px;
+  background-image: url("../../assets/little_icons/purrr.jpg");
+}
+.tensorflow_logo {
+  background-position: 0 -1px;
+  background-image: url("../../assets/little_icons/tens.png");
+}
+.tidymodels_logo {
+  background-position: 0 -1px;
+  background-image: url("../../assets/little_icons/tidymodels.png");
+}
+.sparklyr_logo {
+  background-position: 0 -1px;
+  background-image: url("../../assets/little_icons/sparklyr.png");
+}
+.stringr_logo {
+  background-position: 0 -1px;
+  background-image: url("../../assets/little_icons/stringr.png");
 }
 </style>
