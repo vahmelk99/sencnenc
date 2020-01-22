@@ -37,16 +37,17 @@ export default {
   margin-bottom: 30px;
 }
 .con {
-  padding: 85px 10vw;
+  padding: 87px 10vw;
   background-color: rgba(122, 118, 118, 0.1);
 }
 .inner > img {
   width: 250px;
+  margin-right: 10vw;
   height: 100%;
 }
 .inner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   text-align: right;
   margin-top: 50px;
 }
@@ -61,6 +62,7 @@ export default {
   margin-left: 10px;
 }
 .head > h1 {
+  text-align: center;
   margin-right: 10px;
 }
 @media screen and (max-width: 620px) {

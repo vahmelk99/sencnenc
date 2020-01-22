@@ -1,26 +1,35 @@
 <template>
   <div id="app">
-    <Header :part="0" ref="topper" />
+    <div>
+      <Header :part="0" ref="topper" />
 
-    <div :class="[partColor, 'parts']">
-      <p class="partsLI" v-for="(part, i) in partsLI" :key="i" @click="scrollTo(part)">{{part}}</p>
-    </div>
-    <div class="parts mini">
-      <div class="hamburger">
-        <font-awesome-icon
-          :class="[!showMenu ? 'hamOpen' : '', 'ham']"
-          icon="bars"
-          size="2x"
-          @click="showMenu = !showMenu"
-        />
-      </div>
-      <div class="partInner" v-show="showMenu">
+      <div :class="[partColor, 'parts']">
         <p class="partsLI" v-for="(part, i) in partsLI" :key="i" @click="scrollTo(part)">{{part}}</p>
       </div>
+
+      <div class="parts mini">
+        <div class="hamburger">
+          <font-awesome-icon
+            :class="[!showMenu ? 'hamOpen' : '', 'ham']"
+            icon="bars"
+            size="2x"
+            @click="showMenu = !showMenu"
+          />
+        </div>
+        <div class="partInner" v-show="showMenu">
+          <p
+            class="partsLI"
+            v-for="(part, i) in partsLI"
+            :key="i"
+            @click="scrollTo(part); showMenu = false"
+          >{{part}}</p>
+        </div>
+      </div>
+
+      <Header :part="1" />
+      <Middle />
     </div>
 
-    <Header :part="1" />
-    <Middle />
     <Footer />
   </div>
 </template>
@@ -41,7 +50,7 @@ export default {
   },
   data() {
     return {
-      partsLI: ["Profile", "Experiences", "Abilites", "Projects", "Contact"],
+      partsLI: ["Profile", "Abilites", "Projects", "Experiences", "Contact"],
       showMenu: false,
       partColor: "white"
     };
@@ -70,7 +79,7 @@ export default {
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  user-select: none;
+  /* user-select: none; */
 }
 .bold {
   font-weight: bold;
@@ -86,9 +95,9 @@ export default {
   color: #00aeff;
 }
 .parts {
+  z-index: 2;
   position: sticky;
   top: 0;
-  padding: 35px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -96,12 +105,13 @@ export default {
 .mini {
   color: white;
   display: none;
+  padding: 35px 0;
 }
 .partsLI {
   cursor: pointer;
+  padding: 35px 25px;
   font-size: 20px;
   font-weight: 600;
-  margin: 0 25px;
 }
 @media screen and (max-width: 800px) {
   .parts {

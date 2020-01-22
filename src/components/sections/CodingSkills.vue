@@ -58,7 +58,7 @@
       </div>
       <div class="r_card">
         <div class="r_heading">
-          <div class="r_logo"></div>
+          <div class="r_logo bold">R</div>
         </div>
         <div class="r_stars">
           <font-awesome-icon class="star_filled" icon="star" />
@@ -176,18 +176,15 @@
 </template>
 <script>
 export default {
-  data() {
-    return {};
-  }
+  name: "CodingSkills"
 };
 </script>
 <style scoped>
 .coding_skills_container {
   width: 70%;
   margin: 0 auto;
-  margin-top: 50px;
+  background-color: white;
   padding-bottom: 50px;
-  /* background-color: red; */
 }
 .coding_skills_container > h1:first-child {
   text-align: center;
@@ -334,7 +331,7 @@ export default {
   background-size: cover;
 }
 .r_logo {
-  background-image: url("../../assets/little_icons/r.jpg");
+  /* background-image: url("../../assets/little_icons/r.jpg"); */
 }
 .latex_logo {
   background-image: url("../../assets/little_icons/latex.png");
