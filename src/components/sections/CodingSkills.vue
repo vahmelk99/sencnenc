@@ -126,7 +126,10 @@
         <h4 class="machin_h">Machine Learning Toolbox</h4>
         <h4 class="optim_h">Optimization Toolbox</h4>
         <h4 class="curve_h">Curve Fitting Toolbox</h4>
-        <h4 class="diff_h">Differential Equation Toolbox</h4>
+        <h4 class="diff_h">
+          Differential Equation
+          <wbr />Toolbox
+        </h4>
       </div>
     </div>
     <div class="skills">
@@ -210,7 +213,6 @@ export default {
 .other_card {
   width: 30%;
   background-color: rgba(122, 118, 118, 0.1);
-
   /* background-color: blue; */
 }
 .python_heading,
@@ -432,6 +434,13 @@ export default {
   }
   .coding_skills_container {
     width: 90%;
+  }
+  .python_card > h4,
+  .matlab_card > h4,
+  .r_card > h4,
+  .latex_card > h4,
+  .other_card > h4 {
+    padding-left: 5%;
   }
 }
 </style>
