@@ -1,6 +1,6 @@
 <template>
   <div class="coding_skills_container">
-    <h1>Coding Skills</h1>
+    <h1>{{coding.heading}}</h1>
     <div class="skills">
       <div class="python_card">
         <div class="python_heading">
@@ -160,23 +160,20 @@
         <h4>Powerpoint</h4>
       </div>
       <div class="other_card">
-        <div class="other_heading">Other skills</div>
-        <h4>Java</h4>
-        <h4>C++</h4>
-        <h4>HTML & CSS</h4>
-        <h4>AWS</h4>
-        <h4>Azure</h4>
-        <h4>Spark</h4>
-        <h4>Bash</h4>
-        <h4>Linux</h4>
-        <h4>MacOS</h4>
+        <div class="other_heading">{{coding.body.other.heading}}</div>
+        <div class="other_row">
+          <h4 v-for="(code, index) in coding.body.other.body" :key="index">{{code}}</h4>
+        </div>
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: "CodingSkills"
+  name: "CodingSkills",
+  props: {
+    coding: Object
+  }
 };
 </script>
 <style scoped>
@@ -210,7 +207,6 @@ export default {
 .other_card {
   width: 30%;
   background-color: rgba(122, 118, 118, 0.1);
-
   /* background-color: blue; */
 }
 .python_heading,
@@ -230,7 +226,7 @@ export default {
 .matlab_card > h4,
 .r_card > h4,
 .latex_card > h4,
-.other_card > h4 {
+.other_card h4 {
   /* text-align: center; */
   padding-left: 10%;
 }
@@ -275,7 +271,7 @@ export default {
 .anal_h::before,
 .model_h::before,
 .ms_heading ~ h4::before,
-.other_heading ~ h4::before {
+.other_row h4::before {
   content: "\22B6     ";
   color: #f89621;
 }
@@ -330,9 +326,9 @@ export default {
   margin-right: 3px;
   background-size: cover;
 }
-.r_logo {
-  /* background-image: url("../../assets/little_icons/r.jpg"); */
-}
+/* .r_logo { */
+/* background-image: url("../../assets/little_icons/r.jpg"); */
+/* } */
 .latex_logo {
   background-image: url("../../assets/little_icons/latex.png");
 }
@@ -432,6 +428,13 @@ export default {
   }
   .coding_skills_container {
     width: 90%;
+  }
+  .python_card > h4,
+  .matlab_card > h4,
+  .r_card > h4,
+  .latex_card > h4,
+  .other_card h4 {
+    padding-left: 5%;
   }
 }
 </style>

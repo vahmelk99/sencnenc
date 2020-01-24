@@ -116,7 +116,23 @@ export default {
           }
         },
         coding: {
-          heading: "ALB"
+          heading: "Coding Skills",
+          body: {
+            other: {
+              heading: "Other skills",
+              body: [
+                "Java",
+                "C++",
+                "HTML/CSS",
+                "AWS",
+                "Azure",
+                "Spark",
+                "Bash",
+                "Linux",
+                "MacOS"
+              ]
+            }
+          }
         },
         project: {
           heading: "ALB"
