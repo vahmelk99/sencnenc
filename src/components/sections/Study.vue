@@ -2,36 +2,30 @@
   <div class="con">
     <div class="head">
       <img src="../../assets/glxark.png" />
-      <h1>Study</h1>
+      <h1>{{study.heading}}</h1>
     </div>
     <div class="secs">
       <img src="../../assets/react.png" />
       <div>
-        <h2>Bachelor Degree</h2>
-        <h3 class="bold">in Physics</h3>
-        <p class="txt">
-          <span class="bold">Lorem ipsum dolor sit amet consectetur,</span> adipisicing elit. Commodi ducimus incidunt enim assumenda nisi deleniti quam eligendi maxime at sed nostrum est odit neque hic dolore accusamus, odio voluptate aliquid. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores doloribus, enim accusantium corrupti inventore amet! Exercitationem dolorem aspernatur non saepe adipisci temporibus culpa, voluptas dicta, consequatur facere quasi laborum deserunt.
-        </p>
+        <h2>{{study.body.bachelor}}</h2>
+        <h3 class="bold">{{study.body.phy.heading}}</h3>
+        <p class="txt">{{study.body.phy.body}}</p>
       </div>
     </div>
     <div class="secs">
       <div>
-        <h2>Bachelor Degree</h2>
-        <h3 class="bold">in Maths</h3>
-        <p
-          class="txt"
-        >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi ducimus incidunt enim assumenda nisi deleniti quam eligendi maxime at sed nostrum est odit neque hic dolore accusamus, odio voluptate aliquid. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores doloribus, enim accusantium corrupti inventore amet! Exercitationem dolorem aspernatur non saepe adipisci temporibus culpa, voluptas dicta, consequatur facere quasi laborum deserunt.</p>
+        <h2>{{study.body.bachelor}}</h2>
+        <h3 class="bold">{{study.body.math.heading}}</h3>
+        <p class="txt">{{study.body.math.body}}</p>
       </div>
       <img src="../../assets/pi.png" />
     </div>
     <div class="secs">
       <img src="../../assets/pitag.png" />
       <div>
-        <h2>Maste Degree</h2>
-        <h3 class="bold">in Maths</h3>
-        <p
-          class="txt"
-        >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi ducimus incidunt enim assumenda nisi deleniti quam eligendi maxime at sed nostrum est odit neque hic dolore accusamus, odio voluptate aliquid. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores doloribus, enim accusantium corrupti inventore amet! Exercitationem dolorem aspernatur non saepe adipisci temporibus culpa, voluptas dicta, consequatur facere quasi laborum deserunt.</p>
+        <h2>{{study.body.master}}</h2>
+        <h3 class="bold">{{study.body.math.heading}}</h3>
+        <p class="txt">{{study.body.masterMathBody}}</p>
       </div>
     </div>
   </div>
@@ -39,7 +33,10 @@
 
 <script>
 export default {
-  name: "Study"
+  name: "Study",
+  props: {
+    study: Object
+  }
 };
 </script>
 <style scoped>

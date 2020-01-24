@@ -1,14 +1,14 @@
 <template>
   <div class="con" id="Abilites">
-    <h1>Specializations</h1>
+    <h1>{{spec.heading}}</h1>
     <div class="inner">
       <div>
         <div>
           <img src="../../assets/nn.png" />
         </div>
         <div>
-          <h2>AI</h2>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima provident officiis doloribus sunt natus necessitatibus in consequatur porro ipsam sed a soluta et consectetur, deleniti vitae, enim obcaecati ab omnis?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque nesciunt aspernatur assumenda, voluptatum dolorum aut necessitatibus omnis minus fugit perspiciatis adipisci maxime, eveniet praesentium harum ipsum expedita modi velit illum!</p>
+          <h2>{{spec.body.ai.heading}}</h2>
+          <p>{{spec.body.ai.body}}</p>
         </div>
       </div>
       <div>
@@ -16,8 +16,8 @@
           <img src="../../assets/graphs.png" />
         </div>
         <div>
-          <h2>Data Since and Analitics</h2>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima provident officiis doloribus sunt natus necessitatibus in consequatur porro ipsam sed a soluta et consectetur, deleniti vitae, enim obcaecati ab omnis?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque nesciunt aspernatur assumenda, voluptatum dolorum aut necessitatibus omnis minus fugit perspiciatis adipisci maxime, eveniet praesentium harum ipsum expedita modi velit illum!</p>
+          <h2>{{spec.body.dataAnal.heading}}</h2>
+          <p>{{spec.body.dataAnal.body}}</p>
         </div>
       </div>
       <div>
@@ -25,8 +25,8 @@
           <img src="../../assets/plot.png" />
         </div>
         <div>
-          <h2>Optimization</h2>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima provident officiis doloribus sunt natus necessitatibus in consequatur porro ipsam sed a soluta et consectetur, deleniti vitae, enim obcaecati ab omnis?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque nesciunt aspernatur assumenda, voluptatum dolorum aut necessitatibus omnis minus fugit perspiciatis adipisci maxime, eveniet praesentium harum ipsum expedita modi velit illum!</p>
+          <h2>{{spec.body.opt.heading}}</h2>
+          <p>{{spec.body.opt.body}}</p>
         </div>
       </div>
       <div>
@@ -34,8 +34,8 @@
           <img src="../../assets/diff.png" />
         </div>
         <div>
-          <h2>Differential Equations</h2>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima provident officiis doloribus sunt natus necessitatibus in consequatur porro ipsam sed a soluta et consectetur, deleniti vitae, enim obcaecati ab omnis?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eaque nesciunt aspernatur assumenda, voluptatum dolorum aut necessitatibus omnis minus fugit perspiciatis adipisci maxime, eveniet praesentium harum ipsum expedita modi velit illum!</p>
+          <h2>{{spec.body.diff.heading}}</h2>
+          <p>{{spec.body.diff.body}}</p>
         </div>
       </div>
     </div>
@@ -44,7 +44,10 @@
 
 <script>
 export default {
-  name: "Special"
+  name: "Special",
+  props: {
+    spec: Object
+  }
 };
 </script>
 
