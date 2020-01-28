@@ -28,9 +28,9 @@ export default {
 </script>
 <style scoped>
 .about_sec_all {
-  padding-top: 87px;
+  padding-top: 93px;
   display: flex;
-  align-items: center; /**************/
+  /* align-items: center; */
   justify-content: space-around;
   width: 80%;
   padding-right: 10%;
@@ -48,13 +48,13 @@ export default {
   white-space: pre-line;
   width: 80%;
   margin: 0 auto;
-  text-align: center;
+  /* text-align: center; */
   margin-top: 25px;
 }
 .photo_cont {
   width: 30%;
-  height: 400px;
-  margin-top: 55px;
+  height: 350px;
+  /* margin-top: 55px; */
 }
 .photo {
   width: 300px;
@@ -67,15 +67,14 @@ export default {
 }
 .details_cont {
   width: 25%;
-  height: 400px;
 }
 
 .details_cont > h1 {
-  margin-top: 25px;
+  /* margin-top: 25px; */
   text-align: center;
 }
 .details_cont > .name {
-  margin-top: 35px;
+  margin-top: 24px;
   text-align: center;
 }
 .details_cont > p {
@@ -94,6 +93,7 @@ export default {
   }
   .about_me {
     width: 100%;
+    margin-bottom: 30px;
   }
   .photo_cont {
     display: inline-flex;
@@ -131,6 +131,9 @@ export default {
   }
   .about_sec_all > div {
     width: 100%;
+  }
+  .about_me {
+    margin-bottom: 0;
   }
   .details_cont,
   .photo_cont {

@@ -1,5 +1,5 @@
 <template>
-  <div class="con">
+  <div class="con" id="Study">
     <div class="head">
       <img src="../../assets/glxark.png" />
       <h1>{{study.heading}}</h1>
@@ -40,14 +40,16 @@ export default {
 };
 </script>
 <style scoped>
+.secs:nth-child(even) p {
+  text-align: right;
+}
 .txt {
   text-align: left;
   margin-top: 10px;
-  /* padding: 0 10vw; */
+  white-space: pre-wrap;
 }
 .secs > div {
   width: 50vw;
-  /* flex: 1; */
   text-align: center;
   padding: 0 30px;
 }
@@ -75,6 +77,7 @@ export default {
   align-items: center;
 }
 .con {
+  padding: 93px 0 50px 0;
   background-color: white;
 }
 @media screen and (max-width: 600px) {

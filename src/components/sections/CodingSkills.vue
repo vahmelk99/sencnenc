@@ -1,5 +1,5 @@
 <template>
-  <div class="coding_skills_container">
+  <div class="coding_skills_container" id="Coding">
     <h1>{{coding.heading}}</h1>
     <div class="skills">
       <div class="python_card">
@@ -181,6 +181,7 @@ export default {
   width: 70%;
   margin: 0 auto;
   background-color: white;
+  padding-top: 93px;
   padding-bottom: 50px;
 }
 .coding_skills_container > h1:first-child {

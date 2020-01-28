@@ -1,5 +1,5 @@
 <template>
-  <div class="con" id="Abilites">
+  <div class="con" id="Specs">
     <h1>{{spec.heading}}</h1>
     <div class="inner">
       <div>
@@ -53,9 +53,8 @@ export default {
 
 <style scoped>
 .con {
-  background-color: white;
-  padding: 0 15vw;
-  padding-top: 87px;
+  background-color: #f1f1f1;
+  padding: 93px 15vw;
 }
 .inner h2 {
   text-align: center;
@@ -67,7 +66,7 @@ export default {
   text-align: center;
 }
 .inner > div {
-  margin: 50px 0;
+  margin-top: 50px;
   display: flex;
   align-items: center;
   justify-content: center;

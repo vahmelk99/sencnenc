@@ -5,12 +5,12 @@
       <div class="filtrBlack"></div>
       <div class="inner">
         <div class="textes">
-          <p>WELCOME</p>
+          <p>{{header.welcome}}</p>
           <p>
-            I'm an
-            <span>AI SPECIALIST</span>
+            {{header.iam}}
+            <span>{{header.aiSpec}}</span>
           </p>
-          <p>DEVELOPER PROGRAMMER BUISNESSMAN</p>
+          <p>{{header.more}}</p>
           <div class="icons">
             <span v-for="social in socials" :class="`fa fa-${social}`" :key="social"></span>
           </div>
@@ -20,7 +20,7 @@
     <div class="con" v-else>
       <div class="inner">
         <div class="downdiv">
-          <font-awesome-icon class="downicon" icon="angle-double-down" size="3x" />
+          <font-awesome-icon @click="goToLets" class="downicon" icon="angle-double-down" size="3x" />
         </div>
       </div>
     </div>
@@ -31,12 +31,18 @@
 export default {
   name: "Header",
   props: {
-    part: Number
+    part: Number,
+    header: Object
   },
   data() {
     return {
-      socials: ["facebook", "linkedin", "twitter", "instagram"]
+      socials: ["facebook", "linkedin"]
     };
+  },
+  methods: {
+    goToLets() {
+      this.$emit("goToLets");
+    }
   }
 };
 </script>

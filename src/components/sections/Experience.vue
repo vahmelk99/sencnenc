@@ -1,25 +1,26 @@
 <template>
-  <div class="con" id="Experiences">
+  <div class="con" id="Projects">
     <div class="head">
-      <h1>Project Experience</h1>
+      <h1>{{project.exp.heading}}</h1>
       <img src="../../assets/man.png" />
     </div>
     <div class="inner">
-      <img src="../../assets/man.png" />
       <div class="info">
         <div>
-          <h2>Startselect</h2>
-          <h2>Online Prepaid Services</h2>
-          <p>Mart 2014 - May 2014</p>
-          <h2>Course</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt ducimus, nisi optio voluptate dolorum impedit libero veniam? Eaque, culpa omnis illo, quidem quo unde, error asperiores necessitatibus quam id perspiciatis!</p>
+          <p>{{project.exp.body}}</p>
         </div>
-        <div class="third">
-          <h2>Startselect</h2>
-          <h2>Online Prepaid Services</h2>
-          <p>Mart 2014 - May 2014</p>
-          <h2>Course</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt ducimus, nisi optio voluptate dolorum impedit libero veniam? Eaque, culpa omnis illo, quidem quo unde, error asperiores necessitatibus quam id perspiciatis!</p>
+      </div>
+      <img src="../../assets/man.png" />
+    </div>
+    <div class="head" id="Science">
+      <h1>{{project.career.heading}}</h1>
+      <img src="../../assets/Uxex.png" />
+    </div>
+    <div class="inner">
+      <img src="../../assets/Uxex.png" />
+      <div class="info">
+        <div>
+          <p>{{project.career.body}}</p>
         </div>
       </div>
     </div>
@@ -28,7 +29,10 @@
 
 <script>
 export default {
-  name: "Experience"
+  name: "Experience",
+  props: {
+    project: Object
+  }
 };
 </script>
 
@@ -36,13 +40,16 @@ export default {
 .info > div:first-child {
   margin-bottom: 30px;
 }
+#Science {
+  padding-top: 93px;
+}
 .con {
-  padding: 87px 10vw;
-  background-color: rgba(122, 118, 118, 0.1);
+  padding: 93px 10vw 50px 10vw;
+  background-color: white;
 }
 .inner > img {
   width: 250px;
-  margin-right: 10vw;
+  margin: 0 10vw;
   height: 100%;
 }
 .inner {
@@ -51,9 +58,12 @@ export default {
   text-align: right;
   margin-top: 50px;
 }
+.inner > div:first-child {
+  text-align: left;
+}
 .inner > div {
-  width: 300px;
-  padding-left: 30px;
+  width: 600px;
+  padding: 0 30px;
 }
 .head > img {
   display: none;
@@ -64,6 +74,11 @@ export default {
 .head > h1 {
   text-align: center;
   margin-right: 10px;
+}
+@media screen and (max-width: 1000px) {
+  .inner > img {
+    margin: 0 5vw;
+  }
 }
 @media screen and (max-width: 620px) {
   .head {
@@ -81,7 +96,7 @@ export default {
     display: block;
   }
   .con {
-    padding: 85px 30px;
+    padding: 93px 5vw 50px 5vw;
   }
   .inner > div {
     width: 100%;

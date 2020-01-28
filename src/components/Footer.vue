@@ -2,14 +2,14 @@
   <div class="con" id="Contact">
     <div class="top">
       <div class="first">
-        <h1>Immpresum</h1>
+        <h1>{{footer.immpresum}}</h1>
         <p>Zaven Badalyan</p>
         <p>Landsberger Allee 273</p>
         <p>13055 Berlin</p>
         <p>Germany</p>
       </div>
       <div class="sec">
-        <h1>Connect</h1>
+        <h1>{{footer.connect}}</h1>
         <p>
           <span class="fa fa-facebook">Facebook</span>
         </p>
@@ -23,21 +23,15 @@
           <span class="fa fa-phone">+4901628344423</span>
         </p>
       </div>
-      <div class="third">
-        <h1>Contact Me</h1>
-        <input type="email" placeholder="Your Email" />
-        <textarea placeholder="Message..."></textarea>
-        <div class="send">Send</div>
-      </div>
     </div>
     <div class="bot">
-      <div class="pp">
-        <h3>Pivacy Policy</h3>
-        <span>EN</span>
-        <span>DE</span>
-      </div>
       <div class="copyr">
         <h3>&copy; Zaven Badalyan 2020</h3>
+      </div>
+      <div class="pp">
+        <h3>{{footer.pp}}</h3>
+        <span>EN</span>
+        <span>DE</span>
       </div>
     </div>
   </div>
@@ -45,13 +39,20 @@
 
 <script>
 export default {
-  name: "Footer"
+  name: "Footer",
+  props: {
+    footer: Object
+  }
 };
 </script>
 
 <style scoped>
 .copyr {
   flex: 2;
+}
+.pp > h3 {
+  display: inline-block;
+  margin: 10px 10px 0 10px;
 }
 .pp {
   flex: 1;
@@ -76,43 +77,18 @@ export default {
   background-color: white;
   display: inline-block;
 }
-.third > textarea,
-.third > input {
-  width: 97%;
-  border: 1px solid rgb(90, 90, 90);
-  border-radius: 5px;
-  padding: 10px 1%;
-}
-.third > textarea:focus,
-.third > input:focus {
-  border-color: rgb(92, 179, 255);
-}
-.third > textarea::placeholder,
-.third > input::placeholder {
-  line-height: 16px;
-  font-size: 10px;
-  color: black !important;
-}
-.third > input {
-  margin-bottom: 10px;
-}
-.third > textarea {
-  height: 73px;
-  resize: none;
-  margin-bottom: 7px;
-}
-.third {
-  flex: 1;
-}
-.third > h1 {
-  text-align: center;
-}
-
-.top,
 .bot {
   display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.top {
+  display: flex;
   padding: 0 15vw;
+  max-width: 800px;
   flex-wrap: wrap;
+  margin: 0 auto;
   justify-content: space-between;
 }
 .con {
@@ -124,10 +100,11 @@ export default {
 .con p {
   font-size: 19px;
 }
-.top > div,
+.top > div {
+  padding-top: 40px;
+}
 .bot {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding: 20px 0;
 }
 .top > div > h1 {
   margin-bottom: 10px;
@@ -142,9 +119,6 @@ export default {
   padding-left: 20px;
   padding-right: 20px;
 }
-.third {
-  max-width: 500px;
-}
 .bot span {
   font-size: 15px;
   margin-right: 5px;
@@ -154,13 +128,10 @@ export default {
   cursor: pointer;
 }
 @media screen and (max-width: 885px) {
-  .third {
-    max-width: none;
-  }
   .top {
     display: block;
   }
-  .top > div:not(.third) {
+  .top > div {
     display: inline-block;
     width: 42%;
     padding: 20px 2%;
@@ -168,15 +139,16 @@ export default {
   }
 }
 @media screen and (max-width: 606px) {
-  .top > div:not(.third) {
+  .top > div {
     display: block;
     width: 100%;
   }
   .bot {
     display: block;
   }
-  .pp {
+  .bot {
     margin-bottom: 20px;
+    padding: 20px 15vw;
   }
 }
 </style>

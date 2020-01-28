@@ -26,7 +26,7 @@
         </div>
       </div>
 
-      <Header :part="1" />
+      <Header @goToLets="scrollTo('Lets')" :part="1" />
       <Middle :middle="middle" />
     </div>
 
@@ -40,7 +40,7 @@ import Footer from "./components/Footer.vue";
 import Middle from "./components/Middle.vue";
 import { scroller } from "vue-scrollto/src/scrollTo";
 const scroll = scroller();
-
+import Data from "./components/Data.js";
 export default {
   name: "app",
   components: {
@@ -50,94 +50,21 @@ export default {
   },
   data() {
     return {
-      partsLI: ["Profile", "Abilites", "Projects", "Experiences", "Contact"],
+      partsLI: [
+        "Profile",
+        "Study",
+        "Specs",
+        "Coding",
+        "Languages",
+        "Projects",
+        "Science",
+        "Contact"
+      ],
       showMenu: false,
       partColor: "white",
-      footer: null,
-      header: null,
-      middle: {
-        about: {
-          heading: "About me",
-          body: `Motivated young mathematician.\nCoding enthusiast and Data Science expert.\nLoving AI.`,
-          details: {
-            heading: "Details",
-            body: {
-              name: "Name",
-              nameVal: "Zaven Badalyan",
-              age: "Age",
-              ageVal: 29,
-              location: "Loaction",
-              locationVal: "Berlin"
-            }
-          }
-        },
-        study: {
-          heading: "Study",
-          body: {
-            bachelor: "Bachelor Degree",
-            master: "Master Degree",
-            masterMathBody:
-              "In my Master Maths study I discovered the AI, especially deep learning. I used my Skills in the numerical Maths to understand Machine Learning and Deep Learning better. In my masters thesis I developed new type of AI algorithms. I finished the masters study in the year 2019 with the best mark.",
-            phy: {
-              heading: "in Physics",
-              body:
-                "Started to study physics at the Humbolst University of Berlin in year 2013. Wanted to be theoretica physicist. Physics teached me to look at things in a different way, from a new perpective."
-            },
-            math: {
-              heading: "in Maths",
-              body:
-                "To be better theoretical physicist I started my Bachelor Maths in year 2014. Was specialized in numerical Maths and wrote mathematical simulation codes."
-            }
-          }
-        },
-        spec: {
-          heading: "Specializations",
-          body: {
-            ai: {
-              heading: "AI",
-              body:
-                "Felt in love with the AI after building my first face recognitial software. Was exited with the maths and the bilogical motivation behind of AI."
-            },
-            dataAnal: {
-              heading: "Data Science and Analitics",
-              body:
-                "My mathematical skills made me an expert in Data Science. I always loved Statistics and Stochastcs. Combined with the AI it is the perfect mix to be a competent Data Scientist."
-            },
-            opt: {
-              heading: "Optimization",
-              body:
-                "My Masters Maths gave me huge skillst in the area of Optimization. There I discovered that the deep understanindg of Mathematical Optimization helps you to understand the problematic of AI algorithms which are sometimes not sufficient good enough."
-            },
-            diff: {
-              heading: "Differential Equations",
-              body:
-                "Differential Equations help us to model the reality. They require a huge expertise to choose the right DE to model in the reality. FEM is a discretization method to solve DE in the computer, this is a really difficult area and needs careflul expertise."
-            }
-          }
-        },
-        coding: {
-          heading: "Coding Skills",
-          body: {
-            other: {
-              heading: "Other skills",
-              body: [
-                "Java",
-                "C++",
-                "HTML/CSS",
-                "AWS",
-                "Azure",
-                "Spark",
-                "Bash",
-                "Linux",
-                "MacOS"
-              ]
-            }
-          }
-        },
-        project: {
-          heading: "ALB"
-        }
-      }
+      footer: Data.footer,
+      header: Data.header,
+      middle: Data.middle
     };
   },
   methods: {
@@ -148,6 +75,7 @@ export default {
       scroll(`#${el}`);
     }
   },
+
   created() {
     this.handleScroll();
     window.addEventListener("scroll", this.handleScroll);
@@ -201,7 +129,7 @@ export default {
   font-size: 20px;
   font-weight: 600;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 985px) {
   .parts {
     display: none;
   }

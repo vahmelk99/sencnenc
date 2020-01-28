@@ -4,8 +4,9 @@
     <Study :study="middle.study" />
     <Special :spec="middle.spec" />
     <CodingSkills :coding="middle.coding" />
-    <Langs />
-    <Experience />
+    <Langs :langs="middle.langs" />
+    <Experience :project="middle.project" />
+    <Contact :contact="middle.contact" />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import Experience from "./sections/Experience.vue";
 import CodingSkills from "./sections/CodingSkills.vue";
 import Special from "./sections/Special.vue";
 import Langs from "./sections/Langs.vue";
+import Contact from "./sections/Contact.vue";
 export default {
   name: "Middle",
   data() {
@@ -27,6 +29,7 @@ export default {
   components: {
     CodingSkills,
     Study,
+    Contact,
     Experience,
     Special,
     AboutSection,
