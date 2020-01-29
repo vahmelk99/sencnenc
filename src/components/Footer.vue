@@ -11,16 +11,24 @@
       <div class="sec">
         <h1>{{footer.connect}}</h1>
         <p>
-          <span class="fa fa-facebook">Facebook</span>
+          <span class="fa fa-facebook">
+            <a target="_blank" href="https://www.facebook.com/zaven.badalyan">Facebook</a>
+          </span>
         </p>
         <p>
-          <span class="fa fa-linkedin">Linked In</span>
+          <span class="fa fa-linkedin">
+            <a target="_blank" href="https://www.linkedin.com/in/zaven-badalyan-b8aa21168">Linked In</a>
+          </span>
         </p>
         <p>
-          <span class="fa fa-envelope">zaven@badalyan.it</span>
+          <span class="fa fa-envelope">
+            <a href="mailto:zaven@badalyan.it">zaven@badalyan.it</a>
+          </span>
         </p>
         <p>
-          <span class="fa fa-phone">+4901628344423</span>
+          <span class="fa fa-phone" title="For Mobile">
+            <a href="tel:+4901628344423">+4901628344423</a>
+          </span>
         </p>
       </div>
     </div>
@@ -50,6 +58,17 @@ export default {
 .copyr {
   flex: 2;
 }
+a:focus,
+a:visited,
+a {
+  color: white;
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+a::-moz-focus-inner {
+  outline: none;
+}
 .pp > h3 {
   display: inline-block;
   margin: 10px 10px 0 10px;
@@ -61,7 +80,7 @@ export default {
 .sec span:hover {
   cursor: pointer;
 }
-.sec span:hover {
+.sec p:hover * {
   color: rgb(144, 203, 255);
 }
 .send:hover {
@@ -149,6 +168,11 @@ export default {
   .bot {
     margin-bottom: 20px;
     padding: 20px 15vw;
+  }
+}
+@media (min-width: 600px) {
+  a[href^="tel:"] {
+    pointer-events: none;
   }
 }
 </style>

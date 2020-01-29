@@ -12,7 +12,18 @@
           </p>
           <p>{{header.more}}</p>
           <div class="icons">
-            <span v-for="social in socials" :class="`fa fa-${social}`" :key="social"></span>
+            <a ref="facebook" target="_blank" href="https://www.facebook.com/zaven.badalyan"></a>
+            <a
+              ref="linkedin"
+              target="_blank"
+              href="https://www.linkedin.com/in/zaven-badalyan-b8aa21168"
+            ></a>
+            <span
+              v-for="social in socials"
+              :class="`fa fa-${social}`"
+              :key="social"
+              @click="open(social)"
+            ></span>
           </div>
         </div>
       </div>
@@ -42,6 +53,9 @@ export default {
   methods: {
     goToLets() {
       this.$emit("goToLets");
+    },
+    open(who) {
+      this.$refs[who].click();
     }
   }
 };

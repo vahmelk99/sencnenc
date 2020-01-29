@@ -1,7 +1,14 @@
 <template>
   <form @submit="submit" class="conv">
-    <input :value="email" type="email" :placeholder="pl1 + ' *'" />
-    <textarea :value="message" :placeholder="pl2 + ' *'" cols="30" rows="10"></textarea>
+    <input v-model="email" :class="colorInp" type="email" :placeholder="pl1 + ' *'" />
+    <textarea
+      v-model="message"
+      :class="colorTxt"
+      :placeholder="pl2 + ' *'"
+      cols="30"
+      rows="10"
+      required
+    ></textarea>
     <input class="sub" type="submit" :value="subTxt" />
   </form>
 </template>
@@ -13,8 +20,10 @@ export default {
   name: "Conv",
   data() {
     return {
-      email: "",
-      message: ""
+      email: "vahmelk99@gmail.com",
+      message: "a",
+      colorInp: "green",
+      colorTxt: "green"
     };
   },
   props: {
@@ -26,17 +35,26 @@ export default {
     submit(e) {
       e.preventDefault();
       // path
-      axios.post("http://badalyan.it:3000", {
-        email: this.email,
-        message: this.message
-      });
-      this.email = this.message = "";
+      let re = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/.test(this.email);
+      if (re) {
+        if (this.message) {
+          axios.post("http://badalyan.it:3000/contact", {
+            email: this.email,
+            message: this.message
+          });
+          this.colorInp = this.colorTxt = "green";
+          this.email = this.message = "";
+        } else this.colorTxt = "red";
+      } else this.colorInp = "red";
     }
   }
 };
 </script>
 
 <style scoped>
+.red {
+  border: 3px solid red;
+}
 .sub {
   background-color: green;
   border: none;
@@ -48,7 +66,8 @@ export default {
   cursor: pointer;
   border-radius: 70px;
 }
-.sub:hover {
+.sub:hover,
+.sub:focus {
   background-color: rgb(0, 93, 0);
 }
 .sub::-moz-focus-inner {
@@ -67,10 +86,12 @@ export default {
 }
 .conv > input[type="email"],
 .conv > textarea {
-  border: 3px solid green;
   padding: 13px;
   width: 80%;
   border-radius: 5px;
+}
+.green {
+  border: 3px solid green;
 }
 .conv {
   padding: 93px 0 50px 0;
@@ -80,6 +101,9 @@ export default {
   justify-content: center;
 }
 .conv > *:focus {
-  border-color: rgb(255, 2, 2) !important;
+  border-color: rgb(144, 203, 255) !important;
+}
+.conv > * {
+  box-shadow: none !important;
 }
 </style>

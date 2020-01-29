@@ -4,7 +4,7 @@
       <div class="first">
         <div class="inner" @click="download()">
           <div class="btn">
-            <a ref="pdf" href="../../assets/Lebenslauf.pdf" download="CV_ZavenBadalyan.pdf"></a>
+            <a ref="pdf" href="../../assets/HeaderBG.jpg" download></a>
             <h2>{{contact.CV}}</h2>
           </div>
         </div>

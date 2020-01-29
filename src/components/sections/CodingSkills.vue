@@ -207,6 +207,7 @@ export default {
 .latex_card,
 .other_card {
   width: 30%;
+  max-width: 600px;
   background-color: rgba(122, 118, 118, 0.1);
   /* background-color: blue; */
 }

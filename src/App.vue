@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" v-show="render">
     <div>
       <Header :header="header" :part="0" ref="topper" />
 
@@ -60,6 +60,7 @@ export default {
         "Science",
         "Contact"
       ],
+      render: false,
       showMenu: false,
       partColor: "white",
       footer: Data.footer,
@@ -75,8 +76,10 @@ export default {
       scroll(`#${el}`);
     }
   },
-
   created() {
+    window.location.pathname !== "/"
+      ? (window.location.pathname = "/")
+      : (this.render = true);
     this.handleScroll();
     window.addEventListener("scroll", this.handleScroll);
     //request
@@ -95,7 +98,7 @@ export default {
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  /* user-select: none; */
+  user-select: none;
 }
 .bold {
   font-weight: bold;

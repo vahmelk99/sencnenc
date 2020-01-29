@@ -73,6 +73,7 @@ export default {
 }
 .inner > div > div > img {
   width: 100%;
+  max-width: 900px;
   transition: 1s ease;
   height: auto;
 }
