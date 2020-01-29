@@ -1,27 +1,36 @@
 <template>
   <div id="app">
-    <Header :part="0" ref="topper" />
+    <div>
+      <Header :header="header" :part="0" ref="topper" />
 
-    <div :class="[partColor, 'parts']">
-      <p class="partsLI" v-for="(part, i) in partsLI" :key="i">{{part}}</p>
-    </div>
-    <div class="parts mini">
-      <div class="hamburger">
-        <font-awesome-icon
-          :class="[!showMenu ? 'hamOpen' : '', 'ham']"
-          icon="bars"
-          size="2x"
-          @click="showMenu = !showMenu"
-        />
+      <div :class="[partColor, 'parts']">
+        <p class="partsLI" v-for="(part, i) in partsLI" :key="i" @click="scrollTo(part)">{{part}}</p>
       </div>
-      <div class="partInner" v-show="showMenu">
-        <p class="partsLI" v-for="(part, i) in partsLI" :key="i">{{part}}</p>
+
+      <div class="parts mini">
+        <div class="hamburger">
+          <font-awesome-icon
+            :class="[!showMenu ? 'hamOpen' : '', 'ham']"
+            icon="bars"
+            size="2x"
+            @click="showMenu = !showMenu"
+          />
+        </div>
+        <div class="partInner" v-show="showMenu">
+          <p
+            class="partsLI"
+            v-for="(part, i) in partsLI"
+            :key="i"
+            @click="scrollTo(part); showMenu = false"
+          >{{part}}</p>
+        </div>
       </div>
+
+      <Header @goToLets="scrollTo('Lets')" :part="1" />
+      <Middle :middle="middle" />
     </div>
 
-    <Header :part="1" />
-    <Middle />
-    <Footer />
+    <Footer :footer="footer" />
   </div>
 </template>
 
@@ -29,7 +38,9 @@
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
 import Middle from "./components/Middle.vue";
-
+import { scroller } from "vue-scrollto/src/scrollTo";
+const scroll = scroller();
+import Data from "./components/Data.js";
 export default {
   name: "app",
   components: {
@@ -39,19 +50,38 @@ export default {
   },
   data() {
     return {
-      partsLI: ["Profile", "Experiences", "Abilites", "Projects", "Contact"],
+      partsLI: [
+        "Profile",
+        "Study",
+        "Specs",
+        "Coding",
+        "Languages",
+        "Projects",
+        "Science",
+        "Contact"
+      ],
       showMenu: false,
-      partColor: "white"
+      partColor: "white",
+      footer: Data.footer,
+      header: Data.header,
+      middle: Data.middle
     };
   },
   methods: {
     handleScroll() {
       this.partColor = window.scrollY < 445 ? "white" : "black";
+    },
+    scrollTo(el) {
+      scroll(`#${el}`);
     }
   },
+
   created() {
     this.handleScroll();
     window.addEventListener("scroll", this.handleScroll);
+    //request
+    //
+    //
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
@@ -65,22 +95,25 @@ export default {
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  user-select: none;
+  /* user-select: none; */
+}
+.bold {
+  font-weight: bold;
 }
 .white {
   color: white;
 }
 .black {
   color: black;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.616);
 }
 .partsLI:hover {
   color: #00aeff;
 }
 .parts {
+  z-index: 2;
   position: sticky;
   top: 0;
-  padding: 35px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -88,14 +121,15 @@ export default {
 .mini {
   color: white;
   display: none;
+  padding: 35px 0;
 }
 .partsLI {
   cursor: pointer;
+  padding: 35px 25px;
   font-size: 20px;
   font-weight: 600;
-  margin: 0 25px;
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 985px) {
   .parts {
     display: none;
   }
