@@ -23,7 +23,12 @@ export default {
   methods: {
     submit(e) {
       e.preventDefault();
-      console.log(e);
+      // path
+      axios.post("http://badalyan.it:3000", {
+        email: this.email,
+        message: this.message
+      });
+      this.email = this.message = "";
     }
   }
 };

@@ -46,5 +46,17 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "description": "## Project setup ``` npm install ```",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vahmelk/sencnenc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vahmelk/sencnenc/issues"
+  },
+  "homepage": "https://github.com/vahmelk/sencnenc#readme"
 }
