@@ -1,6 +1,6 @@
 <template>
   <div class="con" id="Contact">
-    <div class="top">
+    <div class="topMy">
       <div class="first">
         <h1>{{footer.immpresum}}</h1>
         <p>Zaven Badalyan</p>
@@ -38,8 +38,8 @@
       </div>
       <div class="pp">
         <h3>{{footer.pp}}</h3>
-        <span>EN</span>
-        <span>DE</span>
+        <span @click="openPP('en')">EN</span>
+        <span @click="openPP('de')">DE</span>
       </div>
     </div>
   </div>
@@ -50,6 +50,11 @@ export default {
   name: "Footer",
   props: {
     footer: Object
+  },
+  methods: {
+    openPP(lan) {
+      this.$emit("openPP", lan);
+    }
   }
 };
 </script>
@@ -102,7 +107,7 @@ a::-moz-focus-inner {
   flex-direction: column;
   align-items: center;
 }
-.top {
+.topMy {
   display: flex;
   padding: 0 15vw;
   max-width: 800px;
@@ -119,13 +124,13 @@ a::-moz-focus-inner {
 .con p {
   font-size: 19px;
 }
-.top > div {
+.topMy > div {
   padding-top: 40px;
 }
 .bot {
   padding: 20px 0;
 }
-.top > div > h1 {
+.topMy > div > h1 {
   margin-bottom: 10px;
 }
 .sec span {
@@ -147,10 +152,10 @@ a::-moz-focus-inner {
   cursor: pointer;
 }
 @media screen and (max-width: 885px) {
-  .top {
+  .topMy {
     display: block;
   }
-  .top > div {
+  .topMy > div {
     display: inline-block;
     width: 42%;
     padding: 20px 2%;
@@ -158,7 +163,7 @@ a::-moz-focus-inner {
   }
 }
 @media screen and (max-width: 606px) {
-  .top > div {
+  .topMy > div {
     display: block;
     width: 100%;
   }

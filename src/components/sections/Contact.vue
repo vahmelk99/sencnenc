@@ -4,16 +4,16 @@
       <div class="first">
         <div class="inner" @click="download()">
           <div class="btn">
-            <a ref="pdf" href="../../assets/HeaderBG.jpg" download></a>
-            <h2>{{contact.CV}}</h2>
+            <a ref="pdf" href="../../assets/Lebenslauf.pdf" download="CV_ZavenBadalyan.pdf"></a>
+            <h3>{{contact.CV}}</h3>
           </div>
         </div>
       </div>
       <div class="second">
         <div class="inner" @click="openConv">
           <div class="btn">
-            <h2>{{contact.lets}}</h2>
-            <h1>{{contact.conv}}</h1>
+            <h3>{{contact.lets}}</h3>
+            <h2>{{contact.conv}}</h2>
           </div>
         </div>
       </div>
@@ -102,6 +102,8 @@ export default {
 .all {
   background-color: #f1f1f1;
 }
+</style>
+<style>
 .slide-fade-enter-active,
 .slide-fade-leave-active {
   transition: all 0.3s ease;

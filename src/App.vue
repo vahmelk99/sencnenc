@@ -1,5 +1,7 @@
 <template>
   <div id="app" v-show="render">
+    <PP :text="PPlan" :show="showPP" @hide="showPP = false" />
+
     <div>
       <Header :header="header" :part="0" ref="topper" />
 
@@ -29,8 +31,7 @@
       <Header @goToLets="scrollTo('Lets')" :part="1" />
       <Middle :middle="middle" />
     </div>
-
-    <Footer :footer="footer" />
+    <Footer :footer="footer" @openPP="openPP" />
   </div>
 </template>
 
@@ -38,15 +39,19 @@
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
 import Middle from "./components/Middle.vue";
+import PP from "./components/sections/PP.vue";
+
+import Data from "./components/Data.js";
 import { scroller } from "vue-scrollto/src/scrollTo";
 const scroll = scroller();
-import Data from "./components/Data.js";
+
 export default {
   name: "app",
   components: {
     Header,
     Middle,
-    Footer
+    Footer,
+    PP
   },
   data() {
     return {
@@ -61,7 +66,9 @@ export default {
         "Contact"
       ],
       render: false,
+      showPP: false,
       showMenu: false,
+      PPlan: "",
       partColor: "white",
       footer: Data.footer,
       header: Data.header,
@@ -74,6 +81,10 @@ export default {
     },
     scrollTo(el) {
       scroll(`#${el}`);
+    },
+    openPP(lan) {
+      this.PPlan = lan;
+      this.showPP = true;
     }
   },
   created() {

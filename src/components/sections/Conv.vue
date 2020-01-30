@@ -38,10 +38,12 @@ export default {
       let re = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/.test(this.email);
       if (re) {
         if (this.message) {
-          axios.post("http://badalyan.it:3000/contact", {
-            email: this.email,
-            message: this.message
-          });
+          axios
+            .post("http://badalyan.it:3000/maasldhashdlend", {
+              email: this.email,
+              message: this.message
+            })
+            .then(res => console.log(res));
           this.colorInp = this.colorTxt = "green";
           this.email = this.message = "";
         } else this.colorTxt = "red";
